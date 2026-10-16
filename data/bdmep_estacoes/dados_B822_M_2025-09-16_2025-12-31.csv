@@ -1,0 +1,16 @@
+Nome: CACHOEIRA DO SUL
+Codigo Estacao: B822
+Latitude: -30.01833332
+Longitude: -52.93888888
+Altitude: 73
+Situacao: Operante
+Data Inicial: 2025-09-16
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-09-30;null;null;
+2025-10-31;null;19,9;
+2025-11-30;55,6;21,7;
+2025-12-31;154,2;24,9;
+

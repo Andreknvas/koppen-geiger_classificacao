@@ -1,0 +1,14 @@
+Nome: BARRA DO GARCAS
+Codigo Estacao: A945
+Latitude: -15.88472221
+Longitude: -52.22722221
+Altitude: 304
+Situacao: Operante
+Data Inicial: 2025-11-25
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-11-30;null;null;
+2025-12-31;181,2;26,3;
+

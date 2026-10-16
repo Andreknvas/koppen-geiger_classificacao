@@ -1,0 +1,17 @@
+Nome: CAXIAS DO SUL - AEROPORTO
+Codigo Estacao: B818
+Latitude: -29.1961111
+Longitude: -51.18638888
+Altitude: 756
+Situacao: Operante
+Data Inicial: 2025-08-13
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-08-31;null;null;
+2025-09-30;null;null;
+2025-10-31;null;null;
+2025-11-30;40,2;18,5;
+2025-12-31;null;22,3;
+

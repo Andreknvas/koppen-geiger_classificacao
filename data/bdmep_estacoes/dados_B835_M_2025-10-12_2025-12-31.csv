@@ -1,0 +1,15 @@
+Nome: JOIA
+Codigo Estacao: B835
+Latitude: -28.65027777
+Longitude: -54.11277777
+Altitude: 0
+Situacao: Pane
+Data Inicial: 2025-10-12
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-10-31;null;null;
+2025-11-30;null;null;
+2025-12-31;null;null;
+

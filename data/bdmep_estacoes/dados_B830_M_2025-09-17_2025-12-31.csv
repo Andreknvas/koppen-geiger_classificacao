@@ -1,0 +1,16 @@
+Nome: SANTA VITORIA DO PALMAR (CENTRO)
+Codigo Estacao: B830
+Latitude: -33.53166666
+Longitude: -53.35027777
+Altitude: 29
+Situacao: Operante
+Data Inicial: 2025-09-17
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-09-30;null;null;
+2025-10-31;79,4;17,6;
+2025-11-30;18,7;19,2;
+2025-12-31;58,6;23,9;
+

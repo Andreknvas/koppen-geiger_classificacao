@@ -1,0 +1,18 @@
+Nome: BAGE - CENTRO
+Codigo Estacao: B827
+Latitude: -31.30555555
+Longitude: -54.01333333
+Altitude: 226.2
+Situacao: Operante
+Data Inicial: 2025-07-31
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-07-31;null;null;
+2025-08-31;null;null;
+2025-09-30;null;null;
+2025-10-31;null;18,1;
+2025-11-30;82,8;20,1;
+2025-12-31;null;24,7;
+

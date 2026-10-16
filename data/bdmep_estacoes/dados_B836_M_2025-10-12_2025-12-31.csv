@@ -1,0 +1,15 @@
+Nome: PALMARES DO SUL
+Codigo Estacao: B836
+Latitude: -30.24916666
+Longitude: -50.50916666
+Altitude: 4
+Situacao: Operante
+Data Inicial: 2025-10-12
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-10-31;null;null;
+2025-11-30;94,5;21;
+2025-12-31;85,7;24,3;
+

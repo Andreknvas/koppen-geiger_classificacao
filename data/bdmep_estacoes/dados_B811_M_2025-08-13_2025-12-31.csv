@@ -1,0 +1,17 @@
+Nome: SERTAO SANTANA
+Codigo Estacao: B811
+Latitude: -30.49416666
+Longitude: -51.66333333
+Altitude: 116
+Situacao: Operante
+Data Inicial: 2025-08-13
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-08-31;null;null;
+2025-09-30;null;16,2;
+2025-10-31;93,8;18,3;
+2025-11-30;105,4;20,5;
+2025-12-31;207,8;23,7;
+

@@ -1,0 +1,18 @@
+Nome: CAXIAS DO SUL - CRIUVA
+Codigo Estacao: B817
+Latitude: -28.87416666
+Longitude: -50.97555554
+Altitude: 857
+Situacao: Operante
+Data Inicial: 2025-07-31
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-07-31;null;null;
+2025-08-31;null;null;
+2025-09-30;null;null;
+2025-10-31;null;15;
+2025-11-30;130,2;17,5;
+2025-12-31;191,2;20,6;
+

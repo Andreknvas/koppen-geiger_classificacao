@@ -1,0 +1,86 @@
+Nome: ANGICAL DO PIAUI
+Codigo Estacao: A377
+Latitude: -6.08944444
+Longitude: -42.72749999
+Altitude: 183
+Situacao: Pane
+Data Inicial: 2019-11-13
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2019-11-30;null;null;
+2019-12-31;101,8;28,5;
+2020-01-31;112;26,2;
+2020-02-29;200,4;26;
+2020-03-31;616,4;25,8;
+2020-04-30;199,2;26;
+2020-05-31;57,6;25,9;
+2020-06-30;6,6;25,2;
+2020-07-31;0;25;
+2020-08-31;0;26,2;
+2020-09-30;,8;28,1;
+2020-10-31;33,6;29,6;
+2020-11-30;35,4;27,4;
+2020-12-31;3;26,9;
+2021-01-31;null;null;
+2021-02-28;null;null;
+2021-03-31;null;null;
+2021-04-30;null;null;
+2021-05-31;null;null;
+2021-06-30;null;null;
+2021-07-31;null;null;
+2021-08-31;null;null;
+2021-09-30;null;null;
+2021-10-31;null;null;
+2021-11-30;null;null;
+2021-12-31;null;null;
+2022-01-31;null;null;
+2022-02-28;null;null;
+2022-03-31;null;null;
+2022-04-30;null;null;
+2022-05-31;null;null;
+2022-06-30;null;null;
+2022-07-31;null;null;
+2022-08-31;0;26;
+2022-09-30;0;28,1;
+2022-10-31;null;29,2;
+2022-11-30;null;26,2;
+2022-12-31;null;26,2;
+2023-01-31;null;25,1;
+2023-02-28;null;25,3;
+2023-03-31;null;25,5;
+2023-04-30;null;25,8;
+2023-05-31;null;26;
+2023-06-30;null;25,7;
+2023-07-31;null;25,7;
+2023-08-31;null;26,8;
+2023-09-30;null;null;
+2023-10-31;null;null;
+2023-11-30;null;null;
+2023-12-31;null;null;
+2024-01-31;null;null;
+2024-02-29;null;null;
+2024-03-31;null;null;
+2024-04-30;null;null;
+2024-05-31;null;null;
+2024-06-30;null;null;
+2024-07-31;null;null;
+2024-08-31;null;null;
+2024-09-30;null;null;
+2024-10-31;null;null;
+2024-11-30;null;null;
+2024-12-31;null;null;
+2025-01-31;null;null;
+2025-02-28;null;null;
+2025-03-31;null;null;
+2025-04-30;null;null;
+2025-05-31;null;null;
+2025-06-30;null;null;
+2025-07-31;null;null;
+2025-08-31;null;null;
+2025-09-30;null;null;
+2025-10-31;null;null;
+2025-11-30;null;null;
+2025-12-31;null;null;
+

@@ -1,0 +1,14 @@
+Nome: NOVO SANTO ANTONIO
+Codigo Estacao: A947
+Latitude: -12.28805555
+Longitude: -50.97138888
+Altitude: 205
+Situacao: Operante
+Data Inicial: 2025-11-27
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-11-30;null;null;
+2025-12-31;158,2;26,6;
+

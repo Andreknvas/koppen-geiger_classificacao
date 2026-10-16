@@ -1,0 +1,18 @@
+Nome: MONTENEGRO
+Codigo Estacao: B814
+Latitude: -29.75861111
+Longitude: -51.4361111
+Altitude: 15
+Situacao: Operante
+Data Inicial: 2025-07-31
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-07-31;null;null;
+2025-08-31;null;null;
+2025-09-30;null;null;
+2025-10-31;null;19,1;
+2025-11-30;99;20,8;
+2025-12-31;207,2;24,2;
+

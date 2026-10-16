@@ -1,0 +1,21 @@
+Nome: PORTO ALEGRE - BELEM NOVO
+Codigo Estacao: B825
+Latitude: -30.1861111
+Longitude: -51.17833332
+Altitude: 3.3
+Situacao: Operante
+Data Inicial: 2025-04-30
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-04-30;null;null;
+2025-05-31;null;null;
+2025-06-30;null;null;
+2025-07-31;null;null;
+2025-08-31;null;null;
+2025-09-30;null;null;
+2025-10-31;null;19,3;
+2025-11-30;83,6;20,9;
+2025-12-31;95;24,4;
+

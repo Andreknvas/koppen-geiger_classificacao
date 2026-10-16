@@ -1,0 +1,13 @@
+Nome: TABAPORA
+Codigo Estacao: A952
+Latitude: -11.05055555
+Longitude: -56.83583333
+Altitude: 337
+Situacao: Operante
+Data Inicial: 2025-12-03
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-12-31;null;null;
+

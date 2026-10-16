@@ -1,0 +1,17 @@
+Nome: TAQUARI
+Codigo Estacao: B815
+Latitude: -29.79166666
+Longitude: -51.82749999
+Altitude: 53
+Situacao: Operante
+Data Inicial: 2025-08-13
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-08-31;null;null;
+2025-09-30;224;17;
+2025-10-31;null;19,4;
+2025-11-30;61,7;21;
+2025-12-31;233,7;25;
+

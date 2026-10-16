@@ -1,0 +1,16 @@
+Nome: HERVAL
+Codigo Estacao: B826
+Latitude: -32.01277777
+Longitude: -53.40305555
+Altitude: 331
+Situacao: Operante
+Data Inicial: 2025-09-16
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-09-30;null;null;
+2025-10-31;44,7;16,7;
+2025-11-30;60,9;18;
+2025-12-31;187;22,2;
+

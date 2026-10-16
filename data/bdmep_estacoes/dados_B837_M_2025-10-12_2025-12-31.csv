@@ -1,0 +1,15 @@
+Nome: PORTO XAVIER
+Codigo Estacao: B837
+Latitude: -27.90277777
+Longitude: -55.16722221
+Altitude: 0
+Situacao: Pane
+Data Inicial: 2025-10-12
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-10-31;null;null;
+2025-11-30;null;null;
+2025-12-31;null;null;
+

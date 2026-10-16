@@ -1,0 +1,17 @@
+Nome: SAO FRANCISCO DE PAULA
+Codigo Estacao: B820
+Latitude: -29.44222221
+Longitude: -50.56027777
+Altitude: 886
+Situacao: Operante
+Data Inicial: 2025-08-17
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-08-31;null;null;
+2025-09-30;null;null;
+2025-10-31;167,1;14,5;
+2025-11-30;151,3;16;
+2025-12-31;266,1;19,5;
+

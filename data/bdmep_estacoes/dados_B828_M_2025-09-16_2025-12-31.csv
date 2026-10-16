@@ -1,0 +1,16 @@
+Nome: ACEGUA
+Codigo Estacao: B828
+Latitude: -31.87472221
+Longitude: -54.11972221
+Altitude: 271
+Situacao: Operante
+Data Inicial: 2025-09-16
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-09-30;null;null;
+2025-10-31;null;16,8;
+2025-11-30;73;18,9;
+2025-12-31;208,4;23,1;
+

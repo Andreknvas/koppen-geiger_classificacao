@@ -1,0 +1,15 @@
+Nome: TORRES-AEROPORTO
+Codigo Estacao: B841
+Latitude: -29.41361111
+Longitude: -49.80361111
+Altitude: 0
+Situacao: Operante
+Data Inicial: 2025-10-12
+Data Final: 2025-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL (AUT)(mm);TEMPERATURA MEDIA, MENSAL (AUT)(°C);
+2025-10-31;null;null;
+2025-11-30;122,9;20,1;
+2025-12-31;174,6;23,6;
+
