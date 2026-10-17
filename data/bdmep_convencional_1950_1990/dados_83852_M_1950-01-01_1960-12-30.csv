@@ -1,0 +1,12 @@
+Nome: UBATUBA
+Codigo Estacao: 83852
+Latitude: -23.43
+Longitude: -45.1
+Altitude: 6
+Situacao: Desativada
+Data Inicial: 1950-01-01
+Data Final: 1960-12-30
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+

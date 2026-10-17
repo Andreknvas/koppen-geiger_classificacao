@@ -1,0 +1,29 @@
+Nome: ASSIS (PEDRINHAS)
+Codigo Estacao: 83717
+Latitude: -22.65
+Longitude: -50.41999999
+Altitude: 350
+Situacao: Desativada
+Data Inicial: 1960-12-31
+Data Final: 1962-05-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1961-01-31;181,8;24,9;
+1961-02-28;null;null;
+1961-03-31;74,8;24,4;
+1961-04-30;null;null;
+1961-05-31;null;null;
+1961-06-30;null;null;
+1961-07-31;null;null;
+1961-08-31;null;null;
+1961-09-30;null;null;
+1961-10-31;null;null;
+1961-11-30;null;null;
+1961-12-31;107,3;25,7;
+1962-01-31;null;null;
+1962-02-28;204,1;25,3;
+1962-03-31;null;null;
+1962-04-30;null;null;
+1962-05-31;74,1;20;
+

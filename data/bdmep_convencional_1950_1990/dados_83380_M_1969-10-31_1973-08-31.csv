@@ -1,0 +1,59 @@
+Nome: BRASILIA - NOVACAP
+Codigo Estacao: 83380
+Latitude: -15.78
+Longitude: -47.93
+Altitude: 1.15
+Situacao: Desativada
+Data Inicial: 1969-10-31
+Data Final: 1973-08-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1969-10-31;null;null;
+1969-11-30;391,4;21,3;
+1969-12-31;null;null;
+1970-01-31;null;null;
+1970-02-28;144,2;20,9;
+1970-03-31;161,7;21,1;
+1970-04-30;null;null;
+1970-05-31;null;null;
+1970-06-30;null;null;
+1970-07-31;0;16,6;
+1970-08-31;0;16,7;
+1970-09-30;67,4;null;
+1970-10-31;219,8;null;
+1970-11-30;234;null;
+1970-12-31;145,8;null;
+1971-01-31;null;null;
+1971-02-28;null;null;
+1971-03-31;null;null;
+1971-04-30;null;null;
+1971-05-31;null;null;
+1971-06-30;null;null;
+1971-07-31;null;null;
+1971-08-31;null;null;
+1971-09-30;null;null;
+1971-10-31;null;null;
+1971-11-30;null;null;
+1971-12-31;null;null;
+1972-01-31;62,3;null;
+1972-02-29;97,8;null;
+1972-03-31;139,3;null;
+1972-04-30;135,3;null;
+1972-05-31;40,9;null;
+1972-06-30;0;null;
+1972-07-31;null;null;
+1972-08-31;,2;null;
+1972-09-30;20,7;null;
+1972-10-31;127;null;
+1972-11-30;220,4;null;
+1972-12-31;380;null;
+1973-01-31;115,5;null;
+1973-02-28;null;null;
+1973-03-31;null;null;
+1973-04-30;null;null;
+1973-05-31;null;null;
+1973-06-30;null;null;
+1973-07-31;0;null;
+1973-08-31;0;null;
+

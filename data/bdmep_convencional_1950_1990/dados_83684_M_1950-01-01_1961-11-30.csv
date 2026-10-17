@@ -1,0 +1,23 @@
+Nome: TRES CORACOES
+Codigo Estacao: 83684
+Latitude: -21.7
+Longitude: -45.25
+Altitude: 893
+Situacao: Desativada
+Data Inicial: 1950-01-01
+Data Final: 1961-11-30
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1961-01-31;296,2;21,8;
+1961-02-28;144,7;21,3;
+1961-03-31;173,3;21,3;
+1961-04-30;137,2;20;
+1961-05-31;45,6;17,3;
+1961-06-30;0;16,3;
+1961-07-31;0;15,7;
+1961-08-31;2,7;17,9;
+1961-09-30;null;null;
+1961-10-31;49;22,1;
+1961-11-30;201,9;22,4;
+

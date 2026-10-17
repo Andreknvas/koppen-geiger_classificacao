@@ -1,0 +1,84 @@
+Nome: GRA. JURITI (PETROPOL.
+Codigo Estacao: 83087
+Latitude: -22.2865
+Longitude: -43.045917
+Altitude: 1012.16
+Situacao: Desativada
+Data Inicial: 1985-01-14
+Data Final: 1990-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1985-01-31;null;null;
+1985-02-28;null;null;
+1985-03-31;null;null;
+1985-04-30;null;null;
+1985-05-31;null;null;
+1985-06-30;null;null;
+1985-07-31;null;null;
+1985-08-31;null;null;
+1985-09-30;null;null;
+1985-10-31;null;null;
+1985-11-30;null;null;
+1985-12-31;null;null;
+1986-01-31;null;null;
+1986-02-28;null;null;
+1986-03-31;null;null;
+1986-04-30;null;null;
+1986-05-31;null;null;
+1986-06-30;null;null;
+1986-07-31;null;null;
+1986-08-31;null;null;
+1986-09-30;null;null;
+1986-10-31;null;null;
+1986-11-30;null;null;
+1986-12-31;null;null;
+1987-01-31;null;null;
+1987-02-28;null;null;
+1987-03-31;null;null;
+1987-04-30;null;null;
+1987-05-31;null;null;
+1987-06-30;null;null;
+1987-07-31;null;null;
+1987-08-31;null;null;
+1987-09-30;null;null;
+1987-10-31;null;null;
+1987-11-30;null;null;
+1987-12-31;null;null;
+1988-01-31;null;null;
+1988-02-29;null;null;
+1988-03-31;null;null;
+1988-04-30;null;null;
+1988-05-31;null;null;
+1988-06-30;null;null;
+1988-07-31;null;null;
+1988-08-31;null;null;
+1988-09-30;null;null;
+1988-10-31;null;null;
+1988-11-30;null;null;
+1988-12-31;null;null;
+1989-01-31;null;null;
+1989-02-28;null;null;
+1989-03-31;null;null;
+1989-04-30;null;null;
+1989-05-31;null;null;
+1989-06-30;null;null;
+1989-07-31;null;null;
+1989-08-31;null;null;
+1989-09-30;null;null;
+1989-10-31;null;null;
+1989-11-30;null;null;
+1989-12-31;null;null;
+1990-01-31;null;22,4;
+1990-02-28;null;21,8;
+1990-03-31;null;22,1;
+1990-04-30;null;21,2;
+1990-05-31;null;16,6;
+1990-06-30;null;15,8;
+1990-07-31;null;15,2;
+1990-08-31;null;14,8;
+1990-09-30;null;16,2;
+1990-10-31;null;19,1;
+1990-11-30;null;21,6;
+1990-12-31;null;20,7;
+

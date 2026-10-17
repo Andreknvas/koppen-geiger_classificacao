@@ -1,0 +1,53 @@
+Nome: NOVA XAV.(XAVANTINA)
+Codigo Estacao: 83319
+Latitude: -14.69805555
+Longitude: -52.35027777
+Altitude: 305.33
+Situacao: Fechada
+Data Inicial: 1987-08-04
+Data Final: 1990-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1987-08-31;null;null;
+1987-09-30;null;null;
+1987-10-31;null;null;
+1987-11-30;660;null;
+1987-12-31;241,9;null;
+1988-01-31;576,7;null;
+1988-02-29;239,5;null;
+1988-03-31;247,5;null;
+1988-04-30;null;null;
+1988-05-31;null;null;
+1988-06-30;0;null;
+1988-07-31;0;null;
+1988-08-31;0;null;
+1988-09-30;41,4;null;
+1988-10-31;142,9;null;
+1988-11-30;218,1;null;
+1988-12-31;118;null;
+1989-01-31;360,7;null;
+1989-02-28;null;null;
+1989-03-31;236,4;null;
+1989-04-30;71,3;null;
+1989-05-31;3;null;
+1989-06-30;9,9;null;
+1989-07-31;18,8;null;
+1989-08-31;9,7;null;
+1989-09-30;35,8;null;
+1989-10-31;61,2;null;
+1989-11-30;333,6;null;
+1989-12-31;394,1;null;
+1990-01-31;null;null;
+1990-02-28;null;null;
+1990-03-31;null;null;
+1990-04-30;null;null;
+1990-05-31;36,1;null;
+1990-06-30;0;null;
+1990-07-31;1;null;
+1990-08-31;7,4;null;
+1990-09-30;83,8;null;
+1990-10-31;183,7;null;
+1990-11-30;126,6;null;
+1990-12-31;195,7;null;
+

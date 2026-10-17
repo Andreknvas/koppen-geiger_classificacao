@@ -1,0 +1,17 @@
+Nome: JUINA
+Codigo Estacao: 83276
+Latitude: -11.42
+Longitude: -58.73
+Altitude: 200
+Situacao: Desativada
+Data Inicial: 1975-08-31
+Data Final: 1975-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1975-08-31;null;null;
+1975-09-30;null;null;
+1975-10-31;null;null;
+1975-11-30;null;null;
+1975-12-31;null;null;
+

@@ -1,0 +1,30 @@
+Nome: SAO GABRIEL DO OESTE
+Codigo Estacao: 83559
+Latitude: -19.41999999
+Longitude: -54.57999999
+Altitude: 614
+Situacao: Desativada
+Data Inicial: 1989-07-26
+Data Final: 1990-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1989-07-31;null;null;
+1989-08-31;null;null;
+1989-09-30;null;null;
+1989-10-31;null;null;
+1989-11-30;null;null;
+1989-12-31;null;null;
+1990-01-31;null;null;
+1990-02-28;null;null;
+1990-03-31;null;null;
+1990-04-30;null;null;
+1990-05-31;null;null;
+1990-06-30;null;null;
+1990-07-31;null;null;
+1990-08-31;null;null;
+1990-09-30;null;null;
+1990-10-31;null;null;
+1990-11-30;null;null;
+1990-12-31;null;null;
+

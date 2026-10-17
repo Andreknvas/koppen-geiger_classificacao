@@ -1,0 +1,60 @@
+Nome: SALINOPOLIS (2)
+Codigo Estacao: 82144
+Latitude: -0.65
+Longitude: -47.55
+Altitude: 14
+Situacao: Desativada
+Data Inicial: 1950-01-01
+Data Final: 1964-12-30
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1961-01-31;120,2;null;
+1961-02-28;1112,4;null;
+1961-03-31;953,4;null;
+1961-04-30;null;null;
+1961-05-31;null;null;
+1961-06-30;null;null;
+1961-07-31;null;null;
+1961-08-31;null;null;
+1961-09-30;null;null;
+1961-10-31;null;null;
+1961-11-30;null;null;
+1961-12-31;null;null;
+1962-01-31;null;null;
+1962-02-28;null;null;
+1962-03-31;null;null;
+1962-04-30;null;null;
+1962-05-31;null;null;
+1962-06-30;63,6;null;
+1962-07-31;26;null;
+1962-08-31;24,8;null;
+1962-09-30;0;null;
+1962-10-31;6,8;null;
+1962-11-30;134,2;null;
+1962-12-31;18,4;null;
+1963-01-31;48,4;null;
+1963-02-28;206,2;null;
+1963-03-31;121,2;null;
+1963-04-30;76,6;null;
+1963-05-31;91,6;null;
+1963-06-30;17,8;null;
+1963-07-31;null;null;
+1963-08-31;9,2;null;
+1963-09-30;0;null;
+1963-10-31;0;null;
+1963-11-30;39,6;null;
+1963-12-31;75,6;null;
+1964-01-31;131,8;null;
+1964-02-29;128,2;null;
+1964-03-31;97,4;null;
+1964-04-30;null;null;
+1964-05-31;99,5;null;
+1964-06-30;68,8;null;
+1964-07-31;68,2;null;
+1964-08-31;null;null;
+1964-09-30;0;null;
+1964-10-31;0;null;
+1964-11-30;0;null;
+1964-12-31;3,6;null;
+

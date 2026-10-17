@@ -1,0 +1,22 @@
+Nome: SAO JOSE DO RIO CLARO
+Codigo Estacao: 83267
+Latitude: -13.45388888
+Longitude: -56.67722221
+Altitude: 339.59
+Situacao: Desativada
+Data Inicial: 1990-03-13
+Data Final: 1990-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1990-03-31;null;null;
+1990-04-30;null;null;
+1990-05-31;null;null;
+1990-06-30;null;null;
+1990-07-31;null;null;
+1990-08-31;null;null;
+1990-09-30;null;null;
+1990-10-31;null;null;
+1990-11-30;null;null;
+1990-12-31;null;null;
+

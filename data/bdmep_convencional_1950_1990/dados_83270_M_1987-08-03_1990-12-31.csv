@@ -1,0 +1,53 @@
+Nome: CANARANA
+Codigo Estacao: 83270
+Latitude: -13.47083332
+Longitude: -52.2711111
+Altitude: 430
+Situacao: Fechada
+Data Inicial: 1987-08-03
+Data Final: 1990-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1987-08-31;null;null;
+1987-09-30;null;null;
+1987-10-31;null;null;
+1987-11-30;null;null;
+1987-12-31;null;null;
+1988-01-31;267;null;
+1988-02-29;231,9;null;
+1988-03-31;382,4;null;
+1988-04-30;343,8;null;
+1988-05-31;null;null;
+1988-06-30;63;null;
+1988-07-31;0;null;
+1988-08-31;0;null;
+1988-09-30;null;null;
+1988-10-31;229,3;null;
+1988-11-30;245,4;null;
+1988-12-31;217,1;null;
+1989-01-31;294,3;null;
+1989-02-28;274,1;null;
+1989-03-31;142,4;null;
+1989-04-30;152,2;null;
+1989-05-31;46,1;null;
+1989-06-30;5,9;null;
+1989-07-31;61,2;null;
+1989-08-31;42,6;null;
+1989-09-30;82;null;
+1989-10-31;274,5;null;
+1989-11-30;267,1;null;
+1989-12-31;463,1;null;
+1990-01-31;174,3;null;
+1990-02-28;419,7;null;
+1990-03-31;327,6;null;
+1990-04-30;72,5;null;
+1990-05-31;103,6;null;
+1990-06-30;0;null;
+1990-07-31;14,7;null;
+1990-08-31;null;null;
+1990-09-30;85,2;null;
+1990-10-31;84,4;null;
+1990-11-30;157,3;null;
+1990-12-31;143,4;null;
+

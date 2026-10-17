@@ -1,0 +1,31 @@
+Nome: ITUMBIARA
+Codigo Estacao: 83523
+Latitude: -18.40972222
+Longitude: -49.19194444
+Altitude: 491.55
+Situacao: Desativada
+Data Inicial: 1989-06-09
+Data Final: 1990-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1989-06-30;null;null;
+1989-07-31;19;null;
+1989-08-31;37,6;null;
+1989-09-30;28,3;null;
+1989-10-31;122,4;null;
+1989-11-30;null;null;
+1989-12-31;313;null;
+1990-01-31;null;null;
+1990-02-28;null;null;
+1990-03-31;null;null;
+1990-04-30;null;null;
+1990-05-31;null;null;
+1990-06-30;1;null;
+1990-07-31;19;null;
+1990-08-31;8,2;null;
+1990-09-30;46,5;null;
+1990-10-31;143,1;null;
+1990-11-30;241,1;null;
+1990-12-31;170,8;null;
+

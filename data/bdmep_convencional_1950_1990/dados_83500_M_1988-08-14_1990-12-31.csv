@@ -1,0 +1,41 @@
+Nome: SERRA DOS AIMORES
+Codigo Estacao: 83500
+Latitude: -17.798812
+Longitude: -40.249925
+Altitude: 211.92
+Situacao: Desativada
+Data Inicial: 1988-08-14
+Data Final: 1990-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1988-08-31;null;null;
+1988-09-30;null;null;
+1988-10-31;null;null;
+1988-11-30;null;null;
+1988-12-31;null;null;
+1989-01-31;null;null;
+1989-02-28;null;null;
+1989-03-31;110,9;null;
+1989-04-30;3,7;null;
+1989-05-31;54,7;null;
+1989-06-30;83,5;null;
+1989-07-31;14,8;null;
+1989-08-31;41,3;null;
+1989-09-30;12,5;null;
+1989-10-31;136,9;null;
+1989-11-30;178,7;null;
+1989-12-31;264,8;null;
+1990-01-31;11,6;null;
+1990-02-28;81,1;null;
+1990-03-31;32,7;null;
+1990-04-30;55,6;null;
+1990-05-31;9,4;null;
+1990-06-30;23,4;null;
+1990-07-31;38,9;null;
+1990-08-31;null;null;
+1990-09-30;null;null;
+1990-10-31;null;null;
+1990-11-30;null;null;
+1990-12-31;null;null;
+

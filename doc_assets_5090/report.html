@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Köppen-Geiger via ERA5 1950-1990</title>
+<style>
+  @page {
+    size: A4;
+    margin: 2.2cm 2cm 2.4cm 2cm;
+    @bottom-center {
+      content: "Página " counter(page) " de " counter(pages);
+      font-family: "Noto Sans", sans-serif;
+      font-size: 8.5pt;
+      color: #888;
+    }
+  }
+  @page cover {
+    margin: 0;
+    @bottom-center { content: none; }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Serif", "DejaVu Serif", serif;
+    font-size: 10.3pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+  }
+  h1, h2, h3, h4 {
+    font-family: "Noto Sans", "DejaVu Sans", sans-serif;
+    color: #0b3d5c;
+    line-height: 1.25;
+  }
+  h1 { font-size: 19pt; margin: 0 0 4pt 0; }
+  h2 {
+    font-size: 14pt;
+    margin: 26pt 0 8pt 0;
+    padding-bottom: 4pt;
+    border-bottom: 1.6pt solid #0b3d5c;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 11.5pt;
+    margin: 16pt 0 6pt 0;
+    color: #145374;
+    page-break-after: avoid;
+  }
+  h4 {
+    font-size: 10.3pt;
+    margin: 12pt 0 4pt 0;
+    color: #3a6b87;
+    page-break-after: avoid;
+  }
+  p { margin: 0 0 8pt 0; text-align: justify; }
+  ul, ol { margin: 0 0 10pt 0; padding-left: 18pt; }
+  li { margin-bottom: 3pt; text-align: justify; }
+  code, .mono {
+    font-family: "DejaVu Sans Mono", monospace;
+    font-size: 8.8pt;
+    background: #f0f3f5;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+  pre {
+    font-family: "DejaVu Sans Mono", monospace;
+    font-size: 8.1pt;
+    line-height: 1.45;
+    background: #f5f7f8;
+    border: 0.6pt solid #dbe2e6;
+    border-left: 3pt solid #0b3d5c;
+    padding: 8pt 10pt;
+    white-space: pre-wrap;
+    border-radius: 3px;
+    page-break-inside: avoid;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 8pt 0 12pt 0;
+    font-size: 9pt;
+    page-break-inside: avoid;
+  }
+  th, td {
+    border: 0.6pt solid #cbd5db;
+    padding: 4pt 7pt;
+    text-align: left;
+  }
+  th {
+    background: #0b3d5c;
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+    font-size: 8.6pt;
+  }
+  tr:nth-child(even) td { background: #f4f7f9; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.bad { color: #b3261e; font-weight: 600; }
+  td.ok { color: #1e6b3a; font-weight: 600; }
+  td.warn { color: #b8860b; font-weight: 600; }
+
+  figure {
+    margin: 12pt 0;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+  figure img {
+    max-width: 100%;
+    border: 0.6pt solid #d9e0e4;
+  }
+  figcaption {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 8.6pt;
+    color: #555;
+    margin-top: 5pt;
+    text-align: left;
+    line-height: 1.4;
+  }
+  figcaption b { color: #0b3d5c; }
+
+  .callout {
+    background: #eef4f8;
+    border-left: 3pt solid #0b3d5c;
+    padding: 8pt 12pt;
+    margin: 10pt 0;
+    font-size: 9.6pt;
+  }
+  .callout.warn {
+    background: #fdf2f0;
+    border-left-color: #b3261e;
+  }
+  .callout.ok {
+    background: #eef7f0;
+    border-left-color: #1e6b3a;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .badge {
+    display: inline-block;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 7.8pt;
+    font-weight: 700;
+    padding: 1.5pt 6pt;
+    border-radius: 8pt;
+    color: white;
+    margin-right: 4pt;
+  }
+  .badge.blue { background: #0b3d5c; }
+  .badge.gray { background: #6b7a82; }
+
+  .tech-grid {
+    display: block;
+    margin: 10pt 0;
+  }
+  .tech-item {
+    border: 0.6pt solid #dbe2e6;
+    border-radius: 4pt;
+    padding: 8pt 10pt;
+    margin-bottom: 7pt;
+    page-break-inside: avoid;
+  }
+  .tech-item .name {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 700;
+    color: #0b3d5c;
+    font-size: 10pt;
+  }
+  .tech-item .why { margin-top: 3pt; font-size: 9.3pt; }
+
+  .section-break { page-break-before: always; }
+
+  .toc { margin: 20pt 0; }
+  .toc ol { list-style: none; padding-left: 0; }
+  .toc li { margin-bottom: 7pt; font-family: "Noto Sans", sans-serif; font-size: 10pt; }
+  .toc .sub { padding-left: 16pt; font-size: 9pt; color: #444; margin-bottom: 4pt; }
+  .toc a { color: #1a1a1a; text-decoration: none; }
+  .toc .num { color: #0b3d5c; font-weight: 700; margin-right: 6pt; }
+
+  .kv { width: 100%; border-collapse: collapse; margin: 8pt 0; }
+  .kv td { border: none; padding: 2pt 8pt 2pt 0; vertical-align: top; }
+  .kv td.k { font-family: "Noto Sans", sans-serif; font-weight: 700; color: #0b3d5c; width: 34%; }
+
+  .cover {
+    page: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3.2cm;
+    background: linear-gradient(160deg, #0b3d5c 0%, #145374 55%, #1c6b8f 100%);
+    color: white;
+  }
+  .cover .kicker {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 10.5pt;
+    letter-spacing: 2.5pt;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 14pt;
+  }
+  .cover h1 {
+    color: white;
+    font-size: 28pt;
+    margin-bottom: 10pt;
+  }
+  .cover .subtitle {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 13pt;
+    font-weight: 300;
+    opacity: 0.92;
+    margin-bottom: 40pt;
+    max-width: 82%;
+  }
+  .cover .meta {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 9.5pt;
+    opacity: 0.85;
+    border-top: 0.6pt solid rgba(255,255,255,0.35);
+    padding-top: 14pt;
+    max-width: 78%;
+  }
+  .cover .meta div { margin-bottom: 3pt; }
+</style>
+</head>
+<body>
+
+<!-- ===================== CAPA ===================== -->
+<div class="cover">
+  <div class="kicker">Documentação técnica &middot; Comparação na mesma janela temporal do artigo</div>
+  <h1>Köppen&#8211;Geiger via ERA5 1950&#8211;1990 — Comparação direta com Alvares et al. (2013)</h1>
+  <div class="subtitle">
+    Reclassificação do Brasil inteiro usando ERA5 reanalysis na <b>mesma janela temporal
+    do artigo original</b> (1950&#8211;1990), com correção de viés por estações
+    convencionais do INMET e investigação das causas residuais de divergência.
+  </div>
+  <div class="meta">
+    <div><b>Período dos dados:</b> janeiro/1950 a dezembro/1990 (41 anos — janela textual do artigo)</div>
+    <div><b>Fonte:</b> ERA5 monthly averaged reanalysis (Copernicus CDS) + 405 estações convencionais BDMEP/INMET</div>
+    <div><b>Área:</b> Brasil inteiro, recortado pela malha oficial do IBGE</div>
+    <div><b>Ferramentas:</b> earthkit-data, xarray, geopandas, pykrige, scikit-learn, matplotlib</div>
+  </div>
+</div>
+
+<!-- ===================== SUMÁRIO ===================== -->
+<div class="section-break"></div>
+<h2 style="border:none; margin-top:0;">Sumário</h2>
+<div class="toc">
+  <ol>
+    <li><a class="num">1</a>Introdução e objetivo</li>
+    <li><a class="num">2</a>Fonte de dados</li>
+    <li class="sub">2.1 ERA5 1950&#8211;1990 &middot; 2.2 Estações convencionais BDMEP/INMET</li>
+    <li><a class="num">3</a>Tecnologias usadas e por quê</li>
+    <li><a class="num">4</a>Metodologia</li>
+    <li class="sub">4.1 Carregamento e alinhamento temporal &middot; 4.2 Máscara do Brasil (IBGE) &middot;
+        4.3 Climatologia mensal &middot; 4.4 Algoritmo de Köppen&#8211;Geiger &middot;
+        4.5 Correção de viés por krigagem</li>
+    <li><a class="num">5</a>Verificação do algoritmo</li>
+    <li><a class="num">6</a>Resultados</li>
+    <li class="sub">6.1 Análise exploratória &middot; 6.2 Climatologia espacial &middot;
+        6.3 Mapa de Köppen &middot; 6.4 Comparação de quatro pontas</li>
+    <li><a class="num">7</a>Correção de viés por estações convencionais</li>
+    <li class="sub">7.1 Resultado da correção &middot; 7.2 Ganhos e perdas por tipo climático</li>
+    <li><a class="num">8</a>Investigação: por que a correção não resolveu Am/Aw</li>
+    <li><a class="num">9</a>Teste negativo: correção por taxa de lapso (altitude)</li>
+    <li><a class="num">10</a>Limitações e ressalvas metodológicas</li>
+    <li><a class="num">11</a>Referências</li>
+  </ol>
+</div>
+
+<!-- ===================== 1. INTRODUÇÃO ===================== -->
+<div class="section-break"></div>
+<h2>1. Introdução e objetivo</h2>
+<p>
+Este documento registra a quarta variante da análise exploratória de classificação climática
+de Köppen&#8211;Geiger para o Brasil, construída sobre o trabalho anterior
+(<code>notebook_brasil.ipynb</code>, ERA5 1996&#8211;2025) com um objetivo específico:
+<b>isolar a variável "período"</b> da variável "fonte de dado" na comparação com o artigo
+original de Alvares et al. (2013).
+</p>
+<p>
+Os notebooks anteriores (ERA5 1996&#8211;2025 e estações automáticas BDMEP ~2000&#8211;2025)
+encontraram a mesma divergência frente ao artigo &#8212; zona B (árido/semiárido) maior, zona C
+(subtropical) menor &#8212; em duas fontes de dado independentes. Isso levanta duas hipóteses
+não excludentes: (1) viés sistemático de fonte de dado moderna, ou (2) mudança climática real
+entre a linha de base do artigo (1950&#8211;1990) e o período atual. Rodar o ERA5 exatamente na
+janela textual do artigo &#8212; <i>"adequate temporal data series (&gt; 25 years between 1950
+and 1990)"</i> &#8212; permite testar essas hipóteses diretamente: se o resultado bater com o
+artigo nessa janela, a hipótese (2) ganha força.
+</p>
+<div class="callout ok">
+  <p><b>Resultado central adiantado:</b> a zona A bate quase perfeitamente com o artigo em
+  todas as quatro fontes testadas (81,4% a 82,4%). A zona B mostra uma progressão temporal
+  quase monotônica &#8212; 4,9% (artigo, 1950&#8211;1990) &rarr; 6,1% (ERA5 na mesma janela) &rarr;
+  ~8% (dado moderno, ERA5 e estações) &#8212; evidência de que a divergência é
+  predominantemente temporal, não um artefato puro de fonte de dado.</p>
+</div>
+
+<!-- ===================== 2. FONTE DE DADOS ===================== -->
+<h2>2. Fonte de dados</h2>
+
+<h3>2.1 ERA5 1950&#8211;1990</h3>
+<table class="kv">
+  <tr><td class="k">Produto</td><td><code>reanalysis-era5-single-levels-monthly-means</code></td></tr>
+  <tr><td class="k">Variáveis</td><td><code>2m_temperature</code> (2t) e <code>total_precipitation</code> (tp)</td></tr>
+  <tr><td class="k">Área (bbox)</td><td>lat 6&deg;/-34&deg;, lon -74&deg;/-34&deg; &#8212; Brasil inteiro + margem</td></tr>
+  <tr><td class="k">Resolução</td><td>grade regular 0,25&deg; (161&times;161 pontos)</td></tr>
+  <tr><td class="k">Período</td><td>jan/1950 &#8211; dez/1990 (41 anos, 984 campos = 2 variáveis &times; 12 meses &times; 41 anos)</td></tr>
+</table>
+<p>
+Uma particularidade de metadados exigiu tratamento especial: o campo <code>tp</code> é
+codificado com o tempo referenciado ao início da previsão (18h do dia anterior + passo de
+12h), enquanto <code>2t</code> usa o tempo de validade direto (00h do dia 1). Isso fazia o
+<code>earthkit-data</code> recusar o merge automático das duas variáveis. A correspondência
+mês-a-mês entre as duas séries foi verificada como 1:1 antes de realinhar pela coordenada
+limpa do <code>2t</code> &#8212; sem alterar nenhum valor de dado, só a coordenada de tempo.
+</p>
+
+<h3>2.2 Estações convencionais BDMEP/INMET</h3>
+<p>
+Para testar correção de viés e investigar causas de divergência, foram usadas <b>646 estações
+convencionais</b> do INMET (código numérico de 5 dígitos, padrão OMM &#8212; rede histórica,
+diferente da rede automática usada no <code>notebook_estacoes.ipynb</code>), baixadas
+manualmente do portal BDMEP para o período 1950&#8211;1990, mesmas variáveis (temperatura média
+mensal, precipitação total mensal). Após filtro de qualidade (&ge;5 anos de dado válido em
+<b>todo</b> mês-calendário, para evitar que uma estação com histórico curto distorça a
+climatologia), restaram <b>405 estações utilizáveis</b>.
+</p>
+
+<!-- ===================== 3. TECNOLOGIAS ===================== -->
+<h2>3. Tecnologias usadas e por quê</h2>
+<div class="tech-grid">
+  <div class="tech-item">
+    <div class="name">earthkit-data + xarray</div>
+    <div class="why">Mesma combinação dos notebooks anteriores: leitura do GRIB via earthkit,
+    processamento N-dimensional (tempo/lat/lon) via xarray. Aqui foi necessário tratar
+    manualmente o desalinhamento de metadados entre <code>2t</code> e <code>tp</code>
+    (Seção 2.1), carregando cada variável separadamente antes do merge.</div>
+  </div>
+  <div class="tech-item">
+    <div class="name">geopandas + shapely</div>
+    <div class="why">Recorte do Brasil pela malha oficial do IBGE (ponto-em-polígono via
+    <code>shapely.contains_xy</code>), igual ao <code>notebook_brasil.ipynb</code> &#8212;
+    necessário porque a bbox do ERA5 inclui partes da Argentina, Bolívia, Paraguai, Peru,
+    Colômbia, Venezuela e Guianas.</div>
+  </div>
+  <div class="tech-item">
+    <div class="name">pykrige</div>
+    <div class="why">Krigagem ordinária (modelo esférico, coordenadas geográficas) para
+    espacializar o erro <code>ERA5 &#8722; estação</code> nos pontos de estação e interpolar
+    essa superfície de correção sobre toda a grade do Brasil (regression-kriging aplicado
+    como correção de viés, não como preenchimento de grade vazia &#8212; o ERA5 já é completo).</div>
+  </div>
+  <div class="tech-item">
+    <div class="name">scikit-learn (LinearRegression)</div>
+    <div class="why">Usado para testar se a altitude explica sistematicamente o erro do ERA5
+    (Seção 9, teste de correção por taxa de lapso) &#8212; resultado negativo, documentado com
+    R² baixo para todos os preditores aplicáveis a uma correção de grade.</div>
+  </div>
+  <div class="tech-item">
+    <div class="name">ETOPO 2022 (NOAA, via ERDDAP)</div>
+    <div class="why">Modelo de elevação de 1 arc-minuto (~1,8 km), obtido via serviço público
+    ERDDAP recortado para a bbox do Brasil (sem precisar baixar/mosaicar tiles SRTM), usado
+    exclusivamente no teste de correção por altitude (Seção 9).</div>
+  </div>
+  <div class="tech-item">
+    <div class="name">matplotlib</div>
+    <div class="why">Todos os mapas e gráficos, incluindo os mapas de densidade de estação
+    (distância à estação mais próxima) usados na investigação da Seção 8.</div>
+  </div>
+</div>
+
+<!-- ===================== 4. METODOLOGIA ===================== -->
+<h2>4. Metodologia</h2>
+
+<h3>4.1 Carregamento e alinhamento temporal</h3>
+<p>
+Carregamento separado de <code>2t</code> e <code>tp</code>, verificação de correspondência
+mês-a-mês (ambas monotonicamente crescentes, 492 passos cada), realinhamento da coordenada de
+tempo de <code>tp</code> pela de <code>2t</code>, e só então merge. Conversão de unidades
+idêntica aos notebooks anteriores: <code>2t</code> em Kelvin &rarr; Celsius;
+<code>tp</code> em m/dia (taxa média diária) &times; dias do mês &times; 1000 &rarr; mm/mês.
+</p>
+
+<h3>4.2 Máscara do Brasil (IBGE)</h3>
+<p>
+Mesmo procedimento do <code>notebook_brasil.ipynb</code>: teste ponto-em-polígono
+(<code>shapely.contains_xy</code>) contra o polígono oficial do IBGE para cada célula da
+grade. Resultado: 11.346 de 25.921 células (43,8% da bbox) dentro do território brasileiro,
+cobrindo 8.530.545 km² &#8212; 0,24% de diferença frente aos 8.510.000 km² oficiais.
+</p>
+
+<h3>4.3 Climatologia mensal</h3>
+<p>
+Para cada célula e mês-calendário, média dos 41 anos (1950&#8211;1990), produzindo os arrays
+<code>T_arr</code>/<code>P_arr</code> (12, lat, lon) que alimentam a classificação.
+</p>
+
+<h3>4.4 Algoritmo de Köppen&#8211;Geiger</h3>
+<p>
+<b>Função <code>koppen_classify</code> copiada, caractere por caractere, dos notebooks
+anteriores &#8212; nenhuma alteração de lógica.</b> Mesma ordem de prioridade
+B&rarr;A&rarr;E&rarr;C/D, mesmos 15 testes sintéticos de verificação (Seção 5).
+</p>
+
+<h3>4.5 Correção de viés por krigagem</h3>
+<p>
+Para cada mês-calendário: (1) amostra-se o valor bruto do ERA5 no pixel mais próximo
+<i>válido</i> (dentro do território) de cada estação convencional &#8212; com fallback de busca
+em janela de 5 células para as 22 estações litorâneas cujo pixel bruto caía em oceano/fora do
+Brasil; (2) calcula-se o erro <code>ERA5 &#8722; estação</code> (temperatura: aditivo;
+precipitação: em escala <code>log1p</code>, para lidar com a assimetria da distribuição de
+chuva); (3) krigagem ordinária (modelo esférico, coordenadas geográficas) desse erro sobre
+todos os pontos de grade do Brasil; (4) subtração da superfície de erro interpolada da grade
+bruta.
+</p>
+
+<!-- ===================== 5. VERIFICAÇÃO ===================== -->
+<div class="section-break"></div>
+<h2>5. Verificação do algoritmo</h2>
+<p>
+Os mesmos 15 perfis sintéticos (um por tipo climático, incluindo tipos que não ocorrem nos
+dados reais &#8212; Cwc, Csa, Csb, ET, EF, BWh) foram reexecutados para comprovar que o
+algoritmo é idêntico ao dos notebooks anteriores:
+</p>
+<pre>OK    esperado=Af   obtido=Af    Tcold= 27.0  Thot= 27.0  MAP= 2460mm  Pdry= 80mm
+OK    esperado=Am   obtido=Am    Tcold= 27.0  Thot= 27.0  MAP= 2525mm  Pdry= 15mm
+OK    esperado=Aw   obtido=Aw    Tcold= 26.0  Thot= 26.0  MAP= 1708mm  Pdry=  1mm
+OK    esperado=As   obtido=As    Tcold= 26.0  Thot= 26.0  MAP= 1475mm  Pdry= 20mm
+OK    esperado=BSh  obtido=BSh   Tcold= 26.0  Thot= 26.0  MAP=  510mm  Pdry=  1mm
+OK    esperado=BWh  obtido=BWh   Tcold= 28.0  Thot= 28.0  MAP=   27mm  Pdry=  0mm
+OK    esperado=Cfa  obtido=Cfa   Tcold= 13.0  Thot= 24.0  MAP= 1540mm  Pdry=110mm
+OK    esperado=Cfb  obtido=Cfb   Tcold= 13.0  Thot= 20.5  MAP= 1460mm  Pdry= 80mm
+OK    esperado=Cwa  obtido=Cwa   Tcold= 17.5  Thot= 23.5  MAP= 1415mm  Pdry= 15mm
+OK    esperado=Cwb  obtido=Cwb   Tcold= 15.5  Thot= 21.5  MAP= 1424mm  Pdry= 10mm
+OK    esperado=Cwc  obtido=Cwc   Tcold=  4.5  Thot= 11.5  MAP= 1260mm  Pdry= 15mm
+OK    esperado=Csa  obtido=Csa   Tcold= 17.5  Thot= 22.7  MAP=  810mm  Pdry= 20mm
+OK    esperado=Csb  obtido=Csb   Tcold= 17.0  Thot= 21.5  MAP=  810mm  Pdry= 20mm
+OK    esperado=ET   obtido=ET    Tcold= -3.0  Thot=  5.0  MAP=  600mm  Pdry= 50mm
+OK    esperado=EF   obtido=EF    Tcold= -5.0  Thot= -5.0  MAP=  360mm  Pdry= 30mm
+
+15/15 casos corretos -- algoritmo idêntico aos outros notebooks</pre>
+
+<!-- ===================== 6. RESULTADOS ===================== -->
+<div class="section-break"></div>
+<h2>6. Resultados</h2>
+
+<h3>6.1 Análise exploratória</h3>
+<figure>
+  <img src="fig_02_cell8.png">
+  <figcaption><b>Figura 1.</b> Temperatura e precipitação médias mensais do Brasil (média
+  espacial), jan/1950 &#8211; dez/1990.</figcaption>
+</figure>
+<figure>
+  <img src="fig_03_cell9.png">
+  <figcaption><b>Figura 2.</b> Temperatura média anual (com tendência linear) e precipitação
+  total anual, ano a ano, 1950&#8211;1990.</figcaption>
+</figure>
+
+<h3>6.2 Climatologia espacial</h3>
+<figure>
+  <img src="fig_04_cell11.png">
+  <figcaption><b>Figura 3.</b> Temperatura média anual e precipitação total anual, climatologia
+  1950&#8211;1990, Brasil inteiro.</figcaption>
+</figure>
+
+<h3>6.3 Mapa de classificação de Köppen</h3>
+<figure>
+  <img src="fig_05_cell17.png">
+  <figcaption><b>Figura 4.</b> Classificação climática de Köppen&#8211;Geiger &#8212; ERA5
+  1950&#8211;1990, Brasil inteiro, mesma janela temporal do artigo original.</figcaption>
+</figure>
+<p>Distribuição percentual (11.346 células classificadas):</p>
+<table>
+  <tr><th>Clima</th><th class="num">Nº de células</th><th class="num">%</th></tr>
+  <tr><td>Aw</td><td class="num">4.829</td><td class="num">42,6%</td></tr>
+  <tr><td>Af</td><td class="num">2.151</td><td class="num">19,0%</td></tr>
+  <tr><td>Am</td><td class="num">1.982</td><td class="num">17,5%</td></tr>
+  <tr><td>Cfa</td><td class="num">794</td><td class="num">7,0%</td></tr>
+  <tr><td>BSh</td><td class="num">670</td><td class="num">5,9%</td></tr>
+  <tr><td>As</td><td class="num">369</td><td class="num">3,3%</td></tr>
+  <tr><td>Cfb</td><td class="num">305</td><td class="num">2,7%</td></tr>
+  <tr><td>Cwa</td><td class="num">149</td><td class="num">1,3%</td></tr>
+  <tr><td>Cwb</td><td class="num">80</td><td class="num">0,7%</td></tr>
+  <tr><td>BWh</td><td class="num">17</td><td class="num">0,1%</td></tr>
+</table>
+
+<h3>6.4 Comparação de quatro pontas (zonas A/B/C)</h3>
+<p>
+Comparação agregada por zona entre o artigo e as três fontes de dado modernas já analisadas
+(ERA5 1996&#8211;2025 e estações automáticas, de notebooks anteriores):
+</p>
+<table>
+  <tr><th>Zona</th><th class="num">Artigo<br>(1950&#8211;1990)</th>
+      <th class="num">ERA5<br>1950&#8211;1990</th>
+      <th class="num">ERA5<br>1996&#8211;2025</th>
+      <th class="num">Estações<br>~2000&#8211;2025</th></tr>
+  <tr><td>A (tropical)</td><td class="num">81,4%</td><td class="num ok">82,2%</td>
+      <td class="num">82,3%</td><td class="num">82,4%</td></tr>
+  <tr><td>B (árido/semiárido)</td><td class="num">4,9%</td><td class="num">6,1%</td>
+      <td class="num">8,2%</td><td class="num">7,9%</td></tr>
+  <tr><td>C (subtropical)</td><td class="num">13,7%</td><td class="num">11,7%</td>
+      <td class="num">9,5%</td><td class="num">9,7%</td></tr>
+</table>
+<div class="callout ok">
+  <p><b>Progressão temporal da zona B:</b> 4,9% &rarr; 6,1% &rarr; 8,2%/7,9% conforme a janela
+  temporal avança de 1950&#8211;1990 para o presente &#8212; o ERA5 rodado exatamente na janela
+  do artigo cai quase precisamente no meio do caminho entre o artigo e o dado moderno,
+  evidência de tendência temporal real (expansão da área semiárida), não apenas viés de fonte
+  de dado.</p>
+</div>
+
+<!-- ===================== 7. CORREÇÃO DE VIÉS ===================== -->
+<div class="section-break"></div>
+<h2>7. Correção de viés por estações convencionais</h2>
+
+<h3>7.1 Resultado da correção</h3>
+<figure>
+  <img src="fig_06_cell21.png">
+  <figcaption><b>Figura 5.</b> 405 estações convencionais utilizáveis (BDMEP, 1950&#8211;1990),
+  coloridas por altitude.</figcaption>
+</figure>
+<p>Diagnóstico mês a mês da correção aplicada (erro médio e desvio-padrão em cada mês):</p>
+<table>
+  <tr><th>Mês</th><th class="num">Erro T médio (°C)</th><th class="num">Erro T DP (°C)</th>
+      <th class="num">Correção média na grade (°C)</th></tr>
+  <tr><td>Jan</td><td class="num">-0,03</td><td class="num">0,88</td><td class="num">0,00</td></tr>
+  <tr><td>Fev</td><td class="num">-0,11</td><td class="num">0,86</td><td class="num">-0,08</td></tr>
+  <tr><td>Mar</td><td class="num">-0,15</td><td class="num">0,87</td><td class="num">-0,12</td></tr>
+  <tr><td>Abr</td><td class="num">-0,09</td><td class="num">0,88</td><td class="num">-0,09</td></tr>
+  <tr><td>Mai</td><td class="num">0,11</td><td class="num">0,91</td><td class="num">0,10</td></tr>
+  <tr><td>Jun</td><td class="num">0,32</td><td class="num">0,98</td><td class="num">0,40</td></tr>
+  <tr><td>Jul</td><td class="num">0,37</td><td class="num">1,06</td><td class="num">0,51</td></tr>
+  <tr><td>Ago</td><td class="num">0,39</td><td class="num">1,11</td><td class="num">0,63</td></tr>
+  <tr><td>Set</td><td class="num">0,45</td><td class="num">1,09</td><td class="num">0,46</td></tr>
+  <tr><td>Out</td><td class="num">0,28</td><td class="num">1,00</td><td class="num">0,46</td></tr>
+  <tr><td>Nov</td><td class="num">0,00</td><td class="num">1,03</td><td class="num">0,14</td></tr>
+  <tr><td>Dez</td><td class="num">-0,06</td><td class="num">0,93</td><td class="num">0,01</td></tr>
+</table>
+
+<figure>
+  <img src="fig_07_cell26.png">
+  <figcaption><b>Figura 6.</b> Comparação lado a lado: classificação ERA5 1950&#8211;1990 bruta
+  vs. corrigida por estação.</figcaption>
+</figure>
+
+<h3>7.2 Ganhos e perdas por tipo climático</h3>
+<p>
+<b>Soma total de diferenças absolutas frente ao artigo: 36,9 pp (bruto) &rarr; 36,0 pp
+(corrigido) &#8212; melhora de menos de 1 ponto percentual.</b> Mas esse número agregado
+esconde uma mistura real de ganhos e perdas por tipo:
+</p>
+<table>
+  <tr><th>Tipo</th><th class="num">Artigo</th><th class="num">ERA5 bruto</th>
+      <th class="num">Dif. bruta (pp)</th><th class="num">ERA5 corrigido</th>
+      <th class="num">Dif. corrigida (pp)</th><th>Resultado</th></tr>
+  <tr><td>Am</td><td class="num">27,5%</td><td class="num">17,5%</td><td class="num">-10,0</td>
+      <td class="num">18,5%</td><td class="num">-9,0</td><td class="ok">melhorou</td></tr>
+  <tr><td>Aw</td><td class="num">25,8%</td><td class="num">42,6%</td><td class="num">+16,8</td>
+      <td class="num">43,2%</td><td class="num">+17,4</td><td class="bad">piorou</td></tr>
+  <tr><td>Af</td><td class="num">22,6%</td><td class="num">19,0%</td><td class="num">-3,6</td>
+      <td class="num">19,0%</td><td class="num">-3,6</td><td>sem mudança</td></tr>
+  <tr><td>Cfa</td><td class="num">6,5%</td><td class="num">7,0%</td><td class="num">+0,5</td>
+      <td class="num">7,1%</td><td class="num">+0,6</td><td class="warn">piorou (marginal)</td></tr>
+  <tr><td>As</td><td class="num">5,5%</td><td class="num">3,3%</td><td class="num">-2,2</td>
+      <td class="num">3,6%</td><td class="num">-1,9</td><td class="ok">melhorou</td></tr>
+  <tr><td>BSh</td><td class="num">4,9%</td><td class="num">5,9%</td><td class="num">+1,0</td>
+      <td class="num">3,3%</td><td class="num">-1,6</td><td class="bad">piorou (supercorrigiu)</td></tr>
+  <tr><td>Cfb</td><td class="num">2,6%</td><td class="num">2,7%</td><td class="num">+0,1</td>
+      <td class="num">2,4%</td><td class="num">-0,2</td><td class="warn">piorou (marginal)</td></tr>
+  <tr><td>Cwa</td><td class="num">2,5%</td><td class="num">1,3%</td><td class="num">-1,2</td>
+      <td class="num">2,2%</td><td class="num">-0,3</td><td class="ok">melhorou bastante</td></tr>
+  <tr><td>Cwb</td><td class="num">2,1%</td><td class="num">0,7%</td><td class="num">-1,4</td>
+      <td class="num">0,7%</td><td class="num">-1,4</td><td>sem mudança</td></tr>
+</table>
+<div class="callout">
+  <p><b>Avaliação:</b> a correção vale a pena manter como alternativa documentada, não como
+  substituta definitiva do mapa bruto. O ganho mais sólido é em Cwa (-1,2 &rarr; -0,3 pp,
+  melhora de 75%), mas Aw (o tipo dominante, principal responsável pela divergência total) e
+  BSh pioraram. Além disso, a correção foi treinada e avaliada nos mesmos pontos de estação
+  (sem separação treino/teste), então a melhora reportada é otimista.</p>
+</div>
+
+<!-- ===================== 8. INVESTIGAÇÃO AM/AW ===================== -->
+<div class="section-break"></div>
+<h2>8. Investigação: por que a correção não resolveu Am/Aw</h2>
+<p>
+O par Am/Aw sozinho responde por 26,8 dos 36,9 pontos percentuais de divergência total
+frente ao artigo &#8212; e a correção de viés mal tocou nele. Hipótese testada: a rede
+convencional tem um vazio de cobertura bem em cima da faixa de transição Amazônia-Cerrado,
+justamente onde essa fronteira mais importa.
+</p>
+<figure>
+  <img src="fig_08_cell28.png">
+  <figcaption><b>Figura 7.</b> Esquerda: distância à estação convencional mais próxima (o
+  vazio escuro no centro do país coincide com a faixa onde Aw domina). Direita: classificação
+  resultante com as estações sobrepostas (x).</figcaption>
+</figure>
+<table>
+  <tr><th>Tipo climático</th><th class="num">Distância média à estação (km)</th>
+      <th class="num">Distância mediana (km)</th></tr>
+  <tr><td>Cfb</td><td class="num">34,8</td><td class="num">33,8</td></tr>
+  <tr><td>Cwb</td><td class="num">38,0</td><td class="num">34,4</td></tr>
+  <tr><td>Cwa</td><td class="num">39,2</td><td class="num">38,7</td></tr>
+  <tr><td>Cfa</td><td class="num">45,2</td><td class="num">41,0</td></tr>
+  <tr><td>BSh</td><td class="num">58,2</td><td class="num">53,8</td></tr>
+  <tr><td>As</td><td class="num">114,5</td><td class="num">90,6</td></tr>
+  <tr><td>Aw</td><td class="num">115,3</td><td class="num">85,0</td></tr>
+  <tr><td>Af</td><td class="num">131,7</td><td class="num">119,6</td></tr>
+  <tr><td>Am</td><td class="num">136,8</td><td class="num">124,7</td></tr>
+</table>
+<p>A proporção de Aw cresce de forma monotônica conforme a célula fica mais isolada de qualquer estação:</p>
+<table>
+  <tr><th>Distância à estação mais próxima</th><th class="num">% do território</th><th class="num">% Aw</th></tr>
+  <tr><td>&gt; 100 km</td><td class="num">42,5%</td><td class="num">41,7%</td></tr>
+  <tr><td>&gt; 150 km</td><td class="num">24,9%</td><td class="num">42,8%</td></tr>
+  <tr><td>&gt; 200 km</td><td class="num">14,1%</td><td class="num">50,2%</td></tr>
+  <tr><td>&gt; 250 km</td><td class="num">8,3%</td><td class="num">59,5%</td></tr>
+</table>
+<div class="callout warn">
+  <p><b>Faixa de transição Amazônia-Cerrado (lat -6&deg;/-14&deg;, lon -58&deg;/-48&deg; —
+  norte do MT, sul do PA/TO):</b> distância média à estação de 186 km, 69% maior que a média
+  nacional (110 km). Composição climática ali: <b>82% Aw / 18% Am.</b> A krigagem do erro
+  nessa região é essencialmente extrapolação de longo alcance, sem sinal local real para
+  corrigir &#8212; por isso a correção de viés (Seção 7) não conseguiu mover essa fronteira.</p>
+</div>
+
+<!-- ===================== 9. TESTE ALTITUDE ===================== -->
+<h2>9. Teste negativo: correção por taxa de lapso (altitude)</h2>
+<p>
+A divergência residual em Cwa/Cwb foi atribuída, em notebooks anteriores, à suavização de
+relevo do ERA5 em baixa resolução. Testamos uma correção por taxa de lapso (lapse-rate) antes
+de implementá-la &#8212; mesma técnica usada por WorldClim/CHELSA para downscaling de
+reanálise &#8212; e o resultado é negativo.
+</p>
+<table>
+  <tr><th>Preditor</th><th>Aplicável à grade?</th>
+      <th class="num">Slope T médio (°C/100m)</th>
+      <th class="num">R² médio (temperatura)</th>
+      <th class="num">R² médio (precipitação)</th></tr>
+  <tr><td>Altitude real da estação (ponto)</td><td class="bad">Não</td>
+      <td class="num">0,076</td><td class="num">0,074</td><td class="num">0,015</td></tr>
+  <tr><td>Diferença ponto&#8722;pixel</td><td class="bad">Não</td>
+      <td class="num">0,205</td><td class="num">0,132</td><td class="num">0,009</td></tr>
+  <tr><td>Altitude média do pixel ERA5 (ETOPO)</td><td class="ok">Sim</td>
+      <td class="num">0,023</td><td class="num">0,010</td><td class="num">0,023</td></tr>
+</table>
+<div class="callout warn">
+  <p><b>Conclusão:</b> os preditores com sinal mais forte (R²=0,07&#8211;0,13) só existem no
+  ponto da estação &#8212; medem o descompasso entre um ponto específico e a média de área de
+  ~28&times;28 km que o pixel ERA5 representa, não um viés sistemático corrigível em nível de
+  grade (toda célula de saída já <i>é</i> uma média de área). O único preditor de fato
+  aplicável à grade &#8212; altitude média do próprio pixel ERA5 &#8212; tem R²&#8776;0,01,
+  insuficiente para justificar a implementação. Para precipitação o sinal é ainda mais fraco
+  (R²&#8776;0,01&#8211;0,02 em todos os preditores). <b>A correção não foi implementada</b>;
+  a causa da divergência residual em Cwa/Cwb fica como questão em aberto.</p>
+</div>
+
+<!-- ===================== 10. LIMITAÇÕES ===================== -->
+<div class="section-break"></div>
+<h2>10. Limitações e ressalvas metodológicas</h2>
+<p>O algoritmo passa nos mesmos 15/15 testes sintéticos dos outros notebooks &#8212; as
+ressalvas abaixo são todas sobre os <b>dados de entrada</b>, não sobre a classificação.</p>
+<ul>
+  <li><b>Confiabilidade do ERA5 cai quanto mais se volta no tempo:</b> a densidade de
+  observações assimiladas (radiossondas, estações de superfície, satélites &#8212; que só
+  contribuem de forma relevante a partir de fins dos anos 1970) era muito menor nas décadas de
+  1950&#8211;60. O ERA5 é internamente consistente ao longo de todo o período, mas sua
+  <i>acurácia</i> nos primeiros ~20 anos desta janela é inferior à dos últimos ~20 anos.</li>
+  <li><b>Bbox diferente entre os dois períodos ERA5:</b> o request de 1950&#8211;1990 usou uma
+  bbox ligeiramente diferente do request de 1996&#8211;2025 (ambos a 0,25&deg;, mas
+  <code>[6,-74,-34,-34]</code> vs. <code>[5.25,-73,-33,-34]</code> aproximadamente) &#8212; por
+  isso a comparação entre os dois períodos é agregada (Seção 6.4), não célula a célula.</li>
+  <li><b>Diferença de método permanece não isolada:</b> o artigo usa estações reais
+  interpoladas por krigagem + regressão por altitude; mesmo rodando o ERA5 na mesma janela
+  temporal, a diferença de método (reanálise de modelo numérico vs. observação direta
+  interpolada) continua sendo uma variável separada da variável "período".</li>
+  <li><b>Correção de viés (Seção 7) quase não resolveu Am/Aw</b> e a Seção 8 explica por quê:
+  vazio de cobertura de estação de até ~400 km de raio bem em cima da faixa de transição
+  Amazônia-Cerrado.</li>
+  <li><b>A correção foi treinada e aplicada nos mesmos pontos de estação</b> (sem separação
+  treino/teste) &#8212; a melhora reportada (36,9&rarr;36,0 pp) é uma medida otimista do que a
+  correção consegue nos próprios pontos onde foi calibrada, não uma validação fora da amostra.</li>
+  <li><b>Correção por taxa de lapso testada e descartada (Seção 9):</b> sinal de altitude
+  aplicável à grade é fraco demais (R²&#8776;0,01) para justificar implementação.</li>
+</ul>
+
+<!-- ===================== 11. REFERÊNCIAS ===================== -->
+<h2>11. Referências</h2>
+<ul style="list-style:none; padding-left:0; font-size: 9.3pt;">
+  <li style="margin-bottom:8pt;">ALVARES, C.A.; STAPE, J.L.; SENTELHAS, P.C.; GONÇALVES, J.L.M.; SPAROVEK, G.
+  <b>Köppen's climate classification map for Brazil.</b> Meteorologische Zeitschrift, v.&nbsp;22, n.&nbsp;6,
+  p.&nbsp;711&#8211;728, 2013.</li>
+  <li style="margin-bottom:8pt;">Copernicus Climate Change Service (C3S). <b>ERA5 monthly averaged data on
+  single levels from 1940 to present.</b> Copernicus Climate Data Store (CDS), 2023.</li>
+  <li style="margin-bottom:8pt;">Instituto Nacional de Meteorologia (INMET). <b>Banco de Dados Meteorológicos
+  para Ensino e Pesquisa (BDMEP).</b> bdmep.inmet.gov.br</li>
+  <li style="margin-bottom:8pt;">NOAA National Centers for Environmental Information. <b>ETOPO 2022 15 Arc-Second
+  Global Relief Model.</b> 2022.</li>
+  <li style="margin-bottom:8pt;">IBGE. <b>Malhas Geográficas — API de Malhas do IBGE.</b> servicodados.ibge.gov.br</li>
+</ul>
+
+</body>
+</html>

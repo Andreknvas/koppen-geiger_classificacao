@@ -1,0 +1,55 @@
+Nome: ITATIAIA (FUNIL)
+Codigo Estacao: 83017
+Latitude: -22.53
+Longitude: -44.57
+Altitude: 545
+Situacao: Desativada
+Data Inicial: 1963-04-30
+Data Final: 1966-10-30
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1963-04-30;null;null;
+1963-05-31;null;null;
+1963-06-30;null;null;
+1963-07-31;null;null;
+1963-08-31;null;null;
+1963-09-30;null;null;
+1963-10-31;null;null;
+1963-11-30;null;null;
+1963-12-31;null;null;
+1964-01-31;null;null;
+1964-02-29;null;null;
+1964-03-31;null;null;
+1964-04-30;null;null;
+1964-05-31;null;null;
+1964-06-30;null;null;
+1964-07-31;null;null;
+1964-08-31;null;null;
+1964-09-30;null;null;
+1964-10-31;null;null;
+1964-11-30;null;null;
+1964-12-31;null;null;
+1965-01-31;null;null;
+1965-02-28;null;null;
+1965-03-31;null;null;
+1965-04-30;null;null;
+1965-05-31;null;null;
+1965-06-30;null;null;
+1965-07-31;null;null;
+1965-08-31;null;null;
+1965-09-30;null;null;
+1965-10-31;null;null;
+1965-11-30;null;null;
+1965-12-31;null;null;
+1966-01-31;239,3;23,9;
+1966-02-28;216,6;25,2;
+1966-03-31;212;22,5;
+1966-04-30;79,5;21,4;
+1966-05-31;24,7;19,3;
+1966-06-30;6,6;18,3;
+1966-07-31;14;18,5;
+1966-08-31;17,9;18,7;
+1966-09-30;26,8;19,3;
+1966-10-31;116,6;21,1;
+

@@ -1,0 +1,56 @@
+Nome: COTRIGUACU
+Codigo Estacao: 82927
+Latitude: -9.92
+Longitude: -58.27
+Altitude: 250
+Situacao: Desativada
+Data Inicial: 1987-05-31
+Data Final: 1990-12-31
+Periodicidade da Medicao: Mensal
+
+Data Medicao;PRECIPITACAO TOTAL, MENSAL(mm);TEMPERATURA MEDIA COMPENSADA, MENSAL(°C);
+1987-05-31;null;null;
+1987-06-30;21;null;
+1987-07-31;4,6;null;
+1987-08-31;10;null;
+1987-09-30;59,1;null;
+1987-10-31;173,2;null;
+1987-11-30;197,7;null;
+1987-12-31;299,7;null;
+1988-01-31;315,9;null;
+1988-02-29;265,2;null;
+1988-03-31;279,1;null;
+1988-04-30;361,1;null;
+1988-05-31;71,5;null;
+1988-06-30;17,4;null;
+1988-07-31;0;null;
+1988-08-31;0;null;
+1988-09-30;34,2;null;
+1988-10-31;152,2;null;
+1988-11-30;153,8;null;
+1988-12-31;274;null;
+1989-01-31;313,4;null;
+1989-02-28;310,2;null;
+1989-03-31;246,3;null;
+1989-04-30;374,6;null;
+1989-05-31;null;null;
+1989-06-30;null;null;
+1989-07-31;null;null;
+1989-08-31;null;null;
+1989-09-30;null;null;
+1989-10-31;88;null;
+1989-11-30;null;null;
+1989-12-31;229,1;null;
+1990-01-31;null;null;
+1990-02-28;53,5;null;
+1990-03-31;null;null;
+1990-04-30;35,6;null;
+1990-05-31;24,2;null;
+1990-06-30;null;null;
+1990-07-31;40;null;
+1990-08-31;null;null;
+1990-09-30;null;null;
+1990-10-31;null;null;
+1990-11-30;null;null;
+1990-12-31;null;null;
+
